@@ -78,6 +78,7 @@ function check(event){
   }
 
   steps.setAttribute(['data-steps'],step)
+  event.target.setAttribute(['data-trail'],step)
 
 }
 

@@ -113,7 +113,19 @@ ul{
 .form-steps__trail:not(:last-child){
   margin-right: 5px;
 }
+#senha[data-trail="1"]{
+  border-color: red;
+}
 
+#senha[data-trail="2"]
+{
+  border-color: orange;
+}
+
+#senha[data-trail="3"]
+{
+  border-color: green;
+}
 
 .form-steps[data-steps="1"] .form-steps__trail:first-child{
   background-color: red;
