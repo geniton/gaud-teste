@@ -6,7 +6,6 @@ function transmit(event){
   const senha = document.getElementById('senha')
   const checkNome = /^[a-zA-Z0-9]+$/.test(nome.value)
 
-  console.log(result)
   if(!result.pass || !result.upp || !result.num){
     return false
   }
