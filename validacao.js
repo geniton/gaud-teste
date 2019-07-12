@@ -1,14 +1,17 @@
+const result = {}
 
-
-function transmit(){
-
+function transmit(event){
   const nome = document.getElementById('nome')
   const confPass = document.getElementById('confSenha')
   const senha = document.getElementById('senha')
   const checkNome = /^[a-zA-Z0-9]+$/.test(nome.value)
 
+  console.log(result)
+  if(!result.pass || !result.upp || !result.num){
+    return false
+  }
+
   if (!checkNome){
-    alert('Nome Incorreto!')
     nome.classList.add('error')
     return false
 
@@ -26,7 +29,7 @@ function transmit(){
 
 }
 
-function check(event){
+function check(){
 
   const password = event.target.value;
   const uppercase = /[A-Z]/.test(password)
@@ -36,8 +39,11 @@ function check(event){
   const textCha = document.querySelector('.form-steps__text--cha')
   const textUpp = document.querySelector('.form-steps__text--upp')
   const textNum = document.querySelector('.form-steps__text--num')
-
   let step = 0;
+
+  if(!result){
+    return false
+  }
 
   if (!password.length){
     texts.forEach((e) => {
@@ -50,33 +56,40 @@ function check(event){
     step++
     textCha.classList.add('sucess')
     textCha.classList.remove('error')
+    result.pass = true
     
   } else {
     textCha.classList.add('error')
     textCha.classList.remove('sucess')
+    result.pass = false
   }
 
   if (uppercase){
     step++
     textUpp.classList.add('sucess')
     textUpp.classList.remove('error')
+    result.upp = true
 
   } else {
     textUpp.classList.add('error')
     textUpp.classList.remove('sucess')
+    result.upp = false
   }
 
   if (numero){
     step++
     textNum.classList.add('sucess')
     textNum.classList.remove('error')
+    result.num = true
+
 
   } else {
     textNum.classList.add('error')
     textNum.classList.remove('sucess')
+    result.num = false
 
   }
-
+  
   steps.setAttribute(['data-steps'],step)
   event.target.setAttribute(['data-trail'],step)
 
