@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <title>Gaud Teste</title>
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <h1 class="header-logo">
+        <a href="#" class="header-logo__btn">
+        </a>
+      </h1>
+    </header>
+    
+    <form action="#" method="post" class="form">
+      <label for="nome" class="form-group">
+        <span class="form-group__title">Nome</span>
+        <input type="text" id="nome" name="nome" maxlength="15" class="form-group__field">
+      </label>
+
+      <label for="senha" class="form-group">
+        <span class="form-group__title">Senha</span>
+        <input type="password" id="senha" name="senha" maxlength="8" class="form-group__field">
+      </label>
+
+      <div class="form-steps form-steps--way">
+        <span class="form-steps__trail"></span>
+        <span class="form-steps__trail"></span>
+        <span class="form-steps__trail"></span>
+      </div>
+      <ul class="form-steps form-steps--info">
+        <li class="form-steps__text form-steps__text--cha">• Pelo menos 6 caracteres</li>
+        <li class="form-steps__text form-steps__text--upp">• Pelo menos 1 letra maiuscula</li>
+        <li class="form-steps__text form-steps__text--num">• Pelo menos 1 número</li>
+      </ul>
+
+      <label for="confSenha" class="form-group">
+        <span class="form-group__title">Confirme sua senha</span>
+        <input type="password" id="confSenha" name="senha" class="form-group__field" maxlength="8">
+      </label>
+      <button type="submit" class="form__btn">Cadastrar</button>
+    </form>
+  </div>
+  <script src="./validacao.js"></script>
+</body>
+</html>

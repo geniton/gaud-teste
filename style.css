@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+input,button{
+  border-radius: 5px;
+  outline: none;
+}
+
+ul{
+  list-style: none;
+}
+
+.container{
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.header-logo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo__btn{
+  background: url('logo-gaud.svg') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 140px;
+  height: 60px;
+}
+
+.form{
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+.form-group{
+  margin-top: 25px;
+  display: block;
+}
+
+.form-group__title{
+  color: #243942;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 0.875em;
+}
+
+.form-group__field{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  font-size: 0.75em;
+}
+
+.form-group__field.error{
+  border-color: red;
+}
+
+.form-steps{
+  margin-top: 7px;
+}
+
+.form-steps--info{
+  margin-top: 20px;
+}
+
+.form-steps__text{
+  color: #858585;
+  font-size: 0.875em;
+}
+
+.form-steps__text:not(:first-child){
+  margin-top: 10px;
+}
+
+.form__btn{
+  margin-top: 20px;
+  height: 40px;
+  background-color: #f9bb3e;
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  color: #243942;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-steps--way{
+  display: flex;
+}
+
+.form-steps__trail{
+  background-color: #e6e6e6;
+  display: block;
+  width: 100%;
+  height: 5px;
+}
+
+.form-steps__trail:not(:last-child){
+  margin-right: 5px;
+}
+
+
+.form-steps[data-steps="1"] .form-steps__trail:first-child{
+  background-color: red;
+  width: 100%;
+  transition: 500ms all ease;
+}
+
+.form-steps[data-steps="2"] .form-steps__trail:nth-child(1),
+.form-steps[data-steps="2"] .form-steps__trail:nth-child(2)
+{
+  background-color: orange;
+  transition: 500ms all ease;
+}
+
+.form-steps[data-steps="3"] .form-steps__trail
+{
+  background-color: green;
+  transition: 500ms all ease;
+}
+
+
+.form-steps__text.sucess{
+  color:green;
+}
+
+.form-steps__text.error{
+  color:red;
+}
+
+@media (min-width: 768px){
+  .form{
+    font-size: 18px;
+  }
+}
